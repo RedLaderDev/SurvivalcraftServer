@@ -1,4 +1,4 @@
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal static class ServerDiagnostics
 {

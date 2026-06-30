@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Xml.Linq;
 
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal sealed partial class HeadlessBootstrap
 {

@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal static class ScKeyServerSettingsWriter
 {

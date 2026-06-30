@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal sealed class SurvivalcraftLoadContext : AssemblyLoadContext
 {

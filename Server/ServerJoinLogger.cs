@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal static class ServerJoinLogger
 {

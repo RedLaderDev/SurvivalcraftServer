@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal sealed record ServerConfig(
     int Port,

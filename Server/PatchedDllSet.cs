@@ -1,7 +1,7 @@
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
-namespace SurvivalcraftServer;
+namespace SurvivalcraftServer.Server;
 
 internal static class PatchedDllSet
 {

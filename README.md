@@ -229,7 +229,8 @@ dotnet run --project SurvivalcraftServer -- probe --storage SurvivalcraftServer/
 
 主要入口：
 
-- `Program.cs`：CLI、配置加载、启动流程。
+- `Program.cs`：进程入口、CLI 参数解析、帮助输出和基础配置校验。
+- `Server/ServerLauncher.cs`：服务端启动流程，包括资源导出、DLL patch/load、probe、selftest 和主 tick 循环。
 - `Server/ServerConfig.cs` / `Server/ServerOptions.cs`：`config.toml` 和 CLI 参数。
 - `Server/HeadlessBootstrap.cs`：headless 初始化主流程。
 - `Server/HeadlessProjectLoader.cs`：单世界加载/创建。
