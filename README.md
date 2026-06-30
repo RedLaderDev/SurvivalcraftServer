@@ -230,11 +230,11 @@ dotnet run --project SurvivalcraftServer -- probe --storage SurvivalcraftServer/
 主要入口：
 
 - `Program.cs`：CLI、配置加载、启动流程。
-- `ServerConfig.cs` / `ServerOptions.cs`：`config.toml` 和 CLI 参数。
-- `HeadlessBootstrap.cs`：headless 初始化主流程。
-- `HeadlessProjectLoader.cs`：单世界加载/创建。
-- `PatchedDllSet.cs`：启动前 DLL 补丁。
-- `ServerPacketLogger.cs`、`ServerJoinLogger.cs`、`TerrainRuntimeLogger.cs`：调试日志 hook。
+- `Server/ServerConfig.cs` / `Server/ServerOptions.cs`：`config.toml` 和 CLI 参数。
+- `Server/HeadlessBootstrap.cs`：headless 初始化主流程。
+- `Server/HeadlessProjectLoader.cs`：单世界加载/创建。
+- `Server/PatchedDllSet.cs`：启动前 DLL 补丁。
+- `Server/ServerPacketLogger.cs`、`Server/ServerJoinLogger.cs`、`Server/TerrainRuntimeLogger.cs`：调试日志 hook。
 
 修改补丁后建议至少执行：
 
