@@ -1,5 +1,5 @@
 using System.Reflection;
-using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 
 namespace SurvivalcraftServer.Server;
 
@@ -15,7 +15,7 @@ internal sealed partial class HeadlessBootstrap
         SetStaticField(_game, "Game.SubsystemTerrain", "TerrainRenderingEnabled", false);
 
         var shaderType = _engine.GetType("Engine.Graphics.Shader", throwOnError: true)!;
-        var emptyShader = FormatterServices.GetUninitializedObject(shaderType);
+        var emptyShader = RuntimeHelpers.GetUninitializedObject(shaderType);
         var terrainRendererType = _game.GetType("Game.TerrainRenderer", throwOnError: true)!;
         terrainRendererType.GetField("m_opaqueShader", BindingFlags.Public | BindingFlags.Static)!.SetValue(null, emptyShader);
         terrainRendererType.GetField("m_alphaTestedShader", BindingFlags.Public | BindingFlags.Static)!.SetValue(null, emptyShader);
@@ -26,7 +26,7 @@ internal sealed partial class HeadlessBootstrap
             .SetValue(null, CreateHeadlessBitmapFont());
 
         var modelShaderType = _game.GetType("Game.ModelShader", throwOnError: true)!;
-        var emptyModelShader = FormatterServices.GetUninitializedObject(modelShaderType);
+        var emptyModelShader = RuntimeHelpers.GetUninitializedObject(modelShaderType);
         var modelsRendererType = _game.GetType("Game.SubsystemModelsRenderer", throwOnError: true)!;
         modelsRendererType.GetField("ShaderOpaque", BindingFlags.Public | BindingFlags.Static)!.SetValue(null, emptyModelShader);
         modelsRendererType.GetField("ShaderAlphaTested", BindingFlags.Public | BindingFlags.Static)!.SetValue(null, emptyModelShader);

@@ -1,5 +1,5 @@
 using System.Reflection;
-using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 
 namespace SurvivalcraftServer.Server;
 
@@ -21,7 +21,7 @@ internal sealed partial class HeadlessBootstrap
     private object CreateSurvivalCraftModEntity(string assetsRoot)
     {
         var type = _game.GetType("Game.SurvivalCraftModEntity", throwOnError: true)!;
-        var builtIn = FormatterServices.GetUninitializedObject(type);
+        var builtIn = RuntimeHelpers.GetUninitializedObject(type);
         var archive = ManualLoadContentScpak(assetsRoot);
         type.GetField("ModArchive", BindingFlags.Public | BindingFlags.Instance)!.SetValue(builtIn, archive);
         type.GetField("ModFilePath", BindingFlags.Public | BindingFlags.Instance)!.SetValue(builtIn, "app:Content.scpak");

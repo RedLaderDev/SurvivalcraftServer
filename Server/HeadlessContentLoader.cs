@@ -1,5 +1,5 @@
 using System.Reflection;
-using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 
 namespace SurvivalcraftServer.Server;
 
@@ -133,7 +133,7 @@ internal sealed partial class HeadlessBootstrap
         }
 
         var shaderType = _engine.GetType("Engine.Graphics.Shader", throwOnError: true)!;
-        AddContentCache("Shaders/AlphaTested", FormatterServices.GetUninitializedObject(shaderType));
+        AddContentCache("Shaders/AlphaTested", RuntimeHelpers.GetUninitializedObject(shaderType));
     }
 
     private void AddContentCache(string key, object value)
