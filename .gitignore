@@ -1,0 +1,59 @@
+# .NET build output
+bin/
+obj/
+out/
+publish/
+artifacts/
+
+# Proprietary game runtime files supplied locally by the user
+lib/
+assets/
+
+# Local server runtime storage, worlds, login tokens and generated config
+server/
+config.toml
+ServerSetting.json
+Login/
+World/
+Worlds/
+FurniturePacks/
+CharacterSkins/
+TexturePacks/
+
+# Logs and local run captures
+*.log
+*.trace
+*.dmp
+*.dump
+*.tmp
+*.bak
+a.txt
+
+# APKs and large package archives
+*.apk
+*.aab
+*.apks
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# Python/cache/editor/OS noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# User-local environment files
+.env
+.env.*
+*.local
