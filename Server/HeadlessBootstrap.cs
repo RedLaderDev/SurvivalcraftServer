@@ -47,6 +47,7 @@ internal sealed partial class HeadlessBootstrap
         InvokeStatic(_game, "Game.ContentManager", "Initialize");
         InstallHeadlessContentCaches();
         InitializeBuiltInModOnly(assetsRoot);
+        InitializeHeadlessLanguage();
         InvokeStatic(_game, "Game.NetWork.PackageManager", "Initialize");
         InitializeGameData();
         LoadOrCreateWorld();
